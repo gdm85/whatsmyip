@@ -9,6 +9,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	addr := r.RemoteAddr
 	p := strings.LastIndex(addr, ":")
 	if p != -1 {
